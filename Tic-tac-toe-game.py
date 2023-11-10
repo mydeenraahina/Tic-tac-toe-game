@@ -1,6 +1,6 @@
 import random
-print("============ welcome to Tic-Tac-Toe Game ============")                          
-def main():
+print("============ Tic-Tac-Toe Game ============")                          
+def main_block():
     list=["_" for i in range(0,10)]
     print(list[0],list[1],list[3])
     print(list[4],list[5],list[6])
@@ -104,18 +104,18 @@ def main():
         elif  list[0]!="|" "_" "|" and list[1]!="_"and list[2]!="_"and list[3]!="_"and list[4]!="_"and list[5]!="_"and list[6]!="_"and list[7]!="_"and list[8]!="_"and tictactoe.x==tictactoe.o==0:
             print("game tied")
             break
-play=input("Do you want to play this game[type yes/no]  :")
+play=input(f"Do you want to play this game[ yes/no]  :")
 if play=="yes":
-    main()
+    main_block()
+    while True:
+        play1=input(f"do u continue this game[yes/no] ")
+        if play1=="yes":
+            main_block()
+        else:
+            print("EXITED!")
+            break
 else:
-    print("type no to exit/yes to continue the game")
-while True:
-    play1=input("do u continue this game ")
-    if play1=="yes":
-        main()
-    else:
-        print("EXITED!")
-        break
+    print("Exit!")
 
     
 
