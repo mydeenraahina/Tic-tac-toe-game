@@ -1,14 +1,18 @@
 import random
-print("============ Tic-Tac-Toe Game ============")                          
+print("============ Tic-Tac-Toe Game ============")  
+
 def main_block():
     list=["_" for i in range(0,10)]
     print(list[0],list[1],list[3])
     print(list[4],list[5],list[6])
     print(list[7],list[8],list[9])
+    
     class tictactoe:
         x=0
         o=0
+        
         def conditions_for_user_won(self):
+            
             if list[0]==list[1]==list[2]=="x":
                 print("user won the game")
                 tictactoe.x+=1
@@ -37,6 +41,7 @@ def main_block():
                 pass
             
         def conditions_for_computer_won(self):
+            
             if list[0]==list[1]==list[2]=="o":
                 print("computer won the game")
                 tictactoe.o+=1
@@ -61,9 +66,12 @@ def main_block():
             elif  list[2]==list[4]==list[6]=="o":
                  print("computer  won the game")
                  tictactoe.o+=1 
+                
         def player1_user(self):
+            
             print("your choice")
             user_choice=int(input("Enter the value \"x\" in the position[0-8] :"))
+            
             try:
                if list[user_choice]=="_":
                    list[user_choice]="x"
@@ -77,9 +85,11 @@ def main_block():
             except IndexError:
                 print(f"{user_choice} is not a valid position")
                 obj.player1_user()
+                
         def player2_computer(self):
             print("computer choice")
             computer_choice=random.randint(0,9)
+            
             try:
                 if list[computer_choice]=="_":
                     list[computer_choice]="o"
@@ -93,6 +103,7 @@ def main_block():
             except IndexError:
                 print(f"{computer_choice}it is not a valid position")
                 obj.player2_computer()
+                
     while True:
         obj=tictactoe()
         obj.player1_user()
@@ -104,6 +115,7 @@ def main_block():
         elif  list[0]!="|" "_" "|" and list[1]!="_"and list[2]!="_"and list[3]!="_"and list[4]!="_"and list[5]!="_"and list[6]!="_"and list[7]!="_"and list[8]!="_"and tictactoe.x==tictactoe.o==0:
             print("game tied")
             break
+            
 play=input(f"Do you want to play this game[ yes/no]  :")
 if play=="yes":
     main_block()
